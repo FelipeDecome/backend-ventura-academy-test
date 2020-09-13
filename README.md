@@ -20,3 +20,30 @@ base as ações do usuário no vídeo juntamente com seu e-mail.
 
 - [x] Usar Node.js.
 - [x] Para cada ação do usuário realizada no front-end salvar na base de dados.
+
+
+## Rotas da api
+
+##### - Rota **POST** `/actions`:
+*Cria uma nova ação no banco de dados no email informado.*
+
+Recebe no body um JSON com 2 parâmetros
+```javascript
+{
+    email: 'string',
+    actionName: 'string', // 'start' || 'pause'
+}
+```
+
+##### - Rota **GET** `/actions`:
+*Retorna uma busca no banco de dados com um email específico.*
+
+Recebe 1 parâmetro na URL
+`/actions?email=email@email.com`
+
+
+##### - Rota **GET** `/actions/all`:
+*Retorna todos as ações registradas no banco de dados separadas por email.*
+
+Não recebe nenhum parâmetro
+
