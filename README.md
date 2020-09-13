@@ -21,8 +21,10 @@ base as ações do usuário no vídeo juntamente com seu e-mail.
 - [x] Usar Node.js.
 - [x] Para cada ação do usuário realizada no front-end salvar na base de dados.
 
+# API
+**https://backend-ventura-academy.herokuapp.com/**
 
-## Rotas da api
+### Rotas da api
 
 ##### - Rota **POST** `/actions`:
 *Cria uma nova ação no banco de dados no email informado.*
