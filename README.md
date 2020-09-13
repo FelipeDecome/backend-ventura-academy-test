@@ -9,6 +9,7 @@
 ```console
 npm install
 npm run build
+npm run knex:build:migrate
 npm start
 ```
 # Funcionalidade Requisitada
