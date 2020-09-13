@@ -6,7 +6,8 @@
     "author": "FelipeDecome <felipe.decome@hotmail.com>",
     "license": "MIT",
     "scripts": {
-        "start": "tsc && npm run knex:build:migrate && node dist/server.js",
+        "start": "npm run knex:build:migrate && node dist/server.js",
+        "build": "tsc",
         "dev": "tsnd --respawn --transpile-only src/server.ts",
         "lint": "eslint --quiet --fix",
         "knex:build:migrate": "knex --knexfile dist/knexfile.js migrate:latest",
