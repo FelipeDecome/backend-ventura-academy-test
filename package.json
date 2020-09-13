@@ -6,11 +6,12 @@
     "author": "FelipeDecome <felipe.decome@hotmail.com>",
     "license": "MIT",
     "scripts": {
-        "start": "tsnd --respawn --transpile-only src/server.ts",
+        "start": "tsc && yarn run knex:build:migrate && node dist/server.js",
+        "dev": "tsnd --respawn --transpile-only src/server.ts",
         "lint": "eslint --quiet --fix",
         "knex:build:migrate": "knex --knexfile dist/knexfile.js migrate:latest",
-        "knex:migrate": "knex --knexfile knexfile.ts migrate:latest",
-        "knex:migrate:rollback": "knex --knexfile knexfile.ts migrate:rollback"
+        "knex:migrate": "knex --knexfile src/knexfile.ts migrate:latest",
+        "knex:migrate:rollback": "knex --knexfile src/knexfile.ts migrate:rollback"
     },
     "dependencies": {
         "cors": "^2.8.5",
