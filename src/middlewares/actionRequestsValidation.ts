@@ -2,14 +2,18 @@ import { Request, Response, NextFunction } from 'express';
 import validator from 'validator';
 
 export const actionCreateValidation = (request: Request, response: Response, next: NextFunction) => {
-    const { email, actionName } = request.body;
+    let { email, actionName } = request.body;
+
+    email = email || '';
+    actionName = actionName || '';
 
     const errors = [];
 
     if (!validator.isEmail(email)) {
-        errors.push({ message: 'Email is invalid or null' });
-    } else if (actionName !== 'start' && actionName !== 'pause') {
-        errors.push({ message: 'Action name is invalid or null' });
+        errors.push({ message: 'O email inserido não é válido' });
+    }
+    if (actionName !== 'start' && actionName !== 'pause') {
+        errors.push({ message: 'Houve algum problema com a ação executada pelo usuário' });
     }
 
     if (errors.length > 0) {
